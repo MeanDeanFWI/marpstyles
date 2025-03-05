@@ -154,4 +154,40 @@ section::after {
   font-size: 18px;
   font-weight: bold;
   color: var(--page-number-color);
+
+  /* -------------------- AUTOMATISCHE SCHRIFTANPASSUNG -------------------------------*/
+
+/* H1 auf Inhaltsfolien - Skaliert sich automatisch */
+section:not(.titlepage) h1 {
+  font-size: clamp(24px, 4vw, 32px); /* Mindestens 24px, Standard 4% der Breite, maximal 32px */
+  font-weight: bold;
+  color: var(--header-color);
+  position: absolute;
+  top: 1.5cm;
+  right: 0.5cm;
+  text-align: right;
+  width: 50%;
+  max-width: 50%;
+}
+
+/* H2 auf Inhaltsfolien - Passt sich flexibel an */
+section:not(.titlepage) h2 {
+  font-size: clamp(18px, 3.5vw, 24px); /* Mindestens 18px, skaliert bis max. 24px */
+  color: var(--subheader-color);
+  margin-top: 2cm;
+  margin-bottom: 0.5cm;
+}
+
+/* Text (Absätze) skaliert sich automatisch */
+section:not(.titlepage) p {
+  font-size: clamp(16px, 2.5vw, 24px); /* Dynamische Anpassung */
+  color: var(--text-color);
+  margin-bottom: 1cm;
+}
+
+/* Listenpunkte skalieren sich mit */
+section:not(.titlepage) ul, section:not(.titlepage) ol {
+  font-size: clamp(16px, 2.5vw, 24px);
+  margin-left: 1cm;
+}
 }
