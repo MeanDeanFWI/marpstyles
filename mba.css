@@ -23,7 +23,7 @@
 
 section {
   background-color: var(--background-color);
-  background-image: url("vwamba.png"); /* Hintergrundbild mit blauem Balken + Logo */
+  background-image: url("https://github.com/MeanDeanFWI/marpstyles/blob/fc2876e6142b1a857831d3901402fa2f6c619159/vwamba.png"); /* Hintergrundbild mit blauem Balken + Logo */
   background-repeat: no-repeat;
   background-size: 100% auto; /* Bild auf gesamte Breite skalieren */
   background-position: bottom; /* Balken bleibt unten */
