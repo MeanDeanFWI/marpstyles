@@ -37,7 +37,7 @@ section {
 /* -------------------- LOGO OBEN LINKS (Titelseite) -------------------------------*/
 section.titlepage::before {
   content: "";
-  background: url("https://github.com/MeanDeanFWI/marpstyles/blob/9276e549a1ba413b15c91e50856a1d771f5fb689/thws-logo_horiz_de_white.png") no-repeat left top;
+  background: url("https://raw.githubusercontent.com/MeanDeanFWI/marpstyles/main/thws-logo_horiz_de_white.png") no-repeat left top;
   background-size: 6.5cm 1.5cm;
   position: absolute;
   top: 0.5cm;
