@@ -1,0 +1,157 @@
+/* @theme thws */
+
+/* Standard-Marp-Stile importieren */
+@import "default";
+
+/* Schriftart Inter importieren */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+/* -------------------- ROOT STYLES -------------------------------*/
+
+:root {
+  font-family: 'Inter', sans-serif;
+  font-weight: normal;
+
+  /* Farben */
+  --background-color: #ffffff;
+  --header-color: #000000; /* Schwarz für h1 */
+  --subheader-color: #000000; /* Schwarz für h2 */
+  --text-color: #000000; /* Schwarz für Fließtext */
+  --list-color: #003366; /* Dunkelblau für Listenpunkte */
+  --quote-color: #FF6600; /* Orange für Zitate */
+  --page-number-color: #000000; /* Schwarz für Foliennummern */
+  --titlepage-bg: #003366; /* Dunkelblau für Titelfolie */
+  --titlepage-text: #FFFFFF; /* Weiß für alle Texte auf Titelseite */
+}
+
+/* -------------------- ALLGEMEINE STRUKTUR -------------------------------*/
+
+section {
+  background-color: var(--background-color);
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 2cm;
+}
+
+/* -------------------- LOGO OBEN LINKS (Titelseite) -------------------------------*/
+section.titlepage::before {
+  content: "";
+  background: url("thws-logo_horiz_de_white.png") no-repeat left top;
+  background-size: 6.5cm 1.5cm;
+  position: absolute;
+  top: 0.5cm;
+  left: 0.5cm;
+  width: 6.5cm;
+  height: 1.5cm;
+  z-index: 10;
+}
+
+/* -------------------- TITELSEITE -------------------------------*/
+section.titlepage {
+  background-color: var(--titlepage-bg); /* Dunkelblau */
+  color: var(--titlepage-text); /* Alle Texte in Weiß */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Titel auf der Titelseite */
+section.titlepage h1 {
+  font-size: 48px;
+  color: var(--titlepage-text);
+  margin-bottom: 0.5cm;
+}
+
+/* Untertitel auf der Titelseite */
+section.titlepage h2 {
+  font-size: 24px;
+  color: var(--titlepage-text);
+}
+
+/* -------------------- LOGO AUF INHALTSFOLIEN (Oben links, jetzt höher) -------------------------------*/
+section:not(.titlepage)::before {
+  content: "";
+  background: url("thws-logo_vert_en_orange-rgb.svg") no-repeat left top;
+  background-size: 4cm 5cm;
+  position: absolute;
+  top: 0.35cm; /* Jetzt 1 cm höher */
+  left: 0.7cm;
+  width: 4cm;
+  height: 5cm;
+  z-index: 10;
+}
+
+/* -------------------- INHALTSFOLIE -------------------------------*/
+
+/* H1 in Inhaltsfolien (rechtsbündig, bleibt tiefer) */
+section:not(.titlepage) h1 {
+  font-size: 32px;
+  font-weight: bold;
+  color: var(--header-color);
+  position: absolute;
+  top: 1.5cm; /* Bleibt 1 cm tiefer für bessere Abstimmung */
+  right: 0.5cm;
+  text-align: right;
+  width: 50%;
+  max-width: 50%;
+}
+
+/* H2 in Inhaltsfolien */
+section:not(.titlepage) h2 {
+  font-size: 24px;
+  color: var(--subheader-color);
+  margin-top: 2cm;
+  margin-bottom: 0.5cm;
+}
+
+/* -------------------- TEXT & LISTEN -------------------------------*/
+
+p {
+  font-size: 24px;
+  color: var(--text-color);
+  margin-bottom: 1cm;
+}
+
+/* Listen */
+ul, ol {
+  font-size: 24px;
+  margin-left: 1cm;
+  list-style-position: outside;
+}
+
+/* Listeneinträge mit hängendem Einzug */
+ul li, ol li {
+  color: var(--text-color);
+  padding-left: 0.5cm;
+  text-indent: -0.5cm;
+}
+
+/* Dunkelblaue Listenpunkte */
+ul li::marker, ol li::marker {
+  color: var(--list-color);
+  font-weight: bold;
+}
+
+/* -------------------- ZITATE -------------------------------*/
+
+blockquote {
+  font-style: italic;
+  color: var(--quote-color);
+  border-left: 3px solid var(--quote-color);
+  padding-left: 1cm;
+}
+
+/* -------------------- SEITENNUMMER -------------------------------*/
+/* Seitenzahl unten rechts (jetzt Schwarz) */
+section::after {
+  content: attr(data-marpit-pagination);
+  position: absolute;
+  bottom: 0.5cm;
+  right: 1cm;
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--page-number-color);
+}
