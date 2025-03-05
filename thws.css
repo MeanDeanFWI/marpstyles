@@ -74,7 +74,7 @@ section.titlepage h2 {
 /* -------------------- LOGO AUF INHALTSFOLIEN (Oben links, jetzt höher) -------------------------------*/
 section:not(.titlepage)::before {
   content: "";
-  background: url("https://github.com/MeanDeanFWI/marpstyles/blob/d6d75c6c4c7bb01403d44a1b4748da0b754a1b59/thws-logo_vert_en_orange-rgb.svg") no-repeat left top;
+  background: url("https://raw.githubusercontent.com/MeanDeanFWI/marpstyles/refs/heads/main/thws-logo_vert_en_orange-rgb.svg") no-repeat left top;
   background-size: 4cm 5cm;
   position: absolute;
   top: 0.35cm; /* Jetzt 1 cm höher */
