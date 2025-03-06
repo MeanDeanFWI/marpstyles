@@ -89,7 +89,7 @@ section:not(.titlepage) ol {
 section::after {
   content: attr(data-marpit-pagination);
   position: absolute;
-  bottom: 0.5cm;
+  bottom: 0.2cm;
   right: 1cm;
   font-size: 18px;
   font-weight: bold;
