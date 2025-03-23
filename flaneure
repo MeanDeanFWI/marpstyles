@@ -1,0 +1,215 @@
+/* @theme flaneure */
+
+/* Marp-Standard-Stile */
+@import "default";
+
+/* Space Mono via Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400&display=swap');
+
+/* Lokale Einbindung von Optima */
+@font-face {
+  font-family: 'Optima';
+  src: url('Flaneure/Optima-Regular.woff2') format('woff2'),
+       url('Flaneure/Optima-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* -------------------- ROOT STYLES -------------------------------*/
+:root {
+  font-family: 'Optima', sans-serif;
+
+  --deep-indigo: #2A3D66;
+  --off-white: #F5F3EE;
+  --graphite-gray: #3A3A3A;
+  --quote-color: #D96C2B;
+  --highlight-orange: #FF6600;
+  --page-number-color: #CDCDCD;
+}
+
+body {
+  background-color: var(--off-white);
+  color: var(--graphite-gray);
+}
+
+header {
+  font-size: 14px;
+  text-align: right;
+  position: absolute;
+  top: 45px;
+  right: 40px;
+  color: var(--page-number-color) !important;
+}
+
+section {
+  background-color: var(--off-white);
+  color: var(--graphite-gray);
+  padding-left: 100px;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Logo */
+section::before {
+  content: "";
+  background: url("https://raw.githubusercontent.com/MeanDeanFWI/thws/refs/heads/main/logos/thws-logo_horiz_en_orange-rgb.svg") no-repeat center;
+  background-size: 440px 70px;
+  position: absolute;
+  top: 30px;
+  left: 0;
+  width: 440px;
+  height: 70px;
+}
+
+/* -------------------- TYPOGRAPHIE -------------------------------*/
+section h1 {
+  font-family: 'Space Mono', monospace;
+  font-variant: small-caps;
+  font-size: 32px;
+  font-weight: 400;
+  color: var(--graphite-gray);
+  width: 700px;
+}
+
+section h2 {
+  font-family: 'Space Mono', monospace;
+  font-size: 24px;
+  color: var(--graphite-gray);
+  width: 700px;
+}
+
+section h3,
+section p,
+section ul,
+section ol {
+  width: 650px;
+}
+
+/* Fließtext */
+p {
+  font-family: 'Optima', sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+}
+
+/* Listen */
+ul, ol {
+  font-family: 'Optima', sans-serif;
+  font-size: 24px;
+  margin-left: -12px;
+  list-style-position: inside;
+}
+
+ul li, ol li {
+  color: var(--graphite-gray);
+  text-indent: -34px;
+}
+
+ul li::marker, ol li::marker {
+  color: var(--highlight-orange);
+}
+
+ul li ul li:before {
+  content: "➔";
+  color: var(--highlight-orange);
+}
+
+/* -------------------- FARBIGE FOLIEN -------------------------------*/
+section.titlepage,
+section.lernziele,
+section.diskussion,
+section[data-background-color]:not([data-background-color="#ffffff"]):not([data-background-color="#fff"]) {
+  background-color: var(--deep-indigo) !important;
+  color: white;
+}
+
+section.titlepage h1,
+section.lernziele h1,
+section.diskussion h1,
+section.summary h1 {
+  font-family: 'Space Mono', monospace;
+  font-variant: small-caps;
+  font-size: 42px;
+  color: var(--highlight-orange);
+}
+
+section.titlepage h2 {
+  font-family: 'Space Mono', monospace;
+  font-size: 40px;
+  font-weight: 300;
+  color: white;
+}
+
+section.lernziele h2,
+section.lernziele p,
+section.lernziele h3,
+section.lernziele ul li,
+section.diskussion h2,
+section.diskussion p,
+section.diskussion h3,
+section.diskussion ul li {
+  color: white;
+}
+
+/* -------------------- ZITATE ------------------------------- */
+section.quote blockquote p {
+  font-family: 'Optima', sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 1.4;
+  color: var(--quote-color);
+}
+
+/* -------------------- GRAFIK UND VOLLBILD ------------------------------- */
+section.grafik h1,
+section.grafik h3,
+section.vollbild h3 {
+  font-family: 'Optima', sans-serif;
+  color: var(--graphite-gray);
+}
+
+section.vollbild h3 {
+  background-color: var(--off-white);
+}
+
+/* -------------------- TABELLE ------------------------------- */
+table {
+  font-size: 24px;
+}
+
+th {
+  background-color: var(--highlight-orange);
+  color: white;
+  border: 1px solid white !important;
+}
+
+td {
+  border: 1px solid white !important;
+}
+
+tr:nth-child(even) {
+  background-color: #f0f0f0 !important;
+}
+
+/* -------------------- FOOTER & SEITENNUMMER ------------------------------- */
+footer {
+  position: absolute;
+  bottom: 0.2cm;
+  left: 2.33cm;
+  font-family: 'Optima', sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--highlight-orange) !important;
+}
+
+section::after {
+  content: counter(section);
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  font-family: 'Optima', sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  color: var(--page-number-color) !important;
+}
